@@ -1,6 +1,6 @@
 import React from "react";
 import { categories, products } from "./../data";
-
+import axios from 'axios'
 import {
   View,
   Text,
@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ImageBackground,
   FlatList,
+  Button
 } from "react-native";
 import CategoryItem from "../Componets/CategoryItem";
 import HorizontalProductItem from "../Componets/HorizontalProductItem";
@@ -17,11 +18,18 @@ import Products from "../Componets/product";
 import {MaterialCommunityIcons,Fontisto,AntDesign,Octicons,MaterialIcons,Feather} from '../Constants/Icons';
 const HomeScreen = (props) => {
  const data=["trending","2020","30% OFF","40% OFF","50% OFF","60% OFF",'most Viewd']
-
+// const clcik_me= async() => {
+//   axios({
+//     method: 'GET',
+//     url: 'http://192.168.1.6:8000/api/app/',
+//   }).then((res)=>{
+//     console.log(res.data)
+//   }).catch((err)=>console.log(err))
+// }
   console.log(props);
   return (
     <>
-   
+   {/* <Button onPress={clcik_me} title="click me" /> */}
       <ScrollView>
       <View style={{backgroundColor:'white', shadowColor: '#000',
         shadowOffset: {width: 0, height: 2},

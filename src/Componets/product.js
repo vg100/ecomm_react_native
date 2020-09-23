@@ -57,12 +57,16 @@ const Products = (props) => {
       setViable(false);
     }
   }
+
+  function truncate(str){
+    return str.length >10 ? str.substring(0,50) + " ..." :str
+   }
   return (
     <>
       <TouchableOpacity
      
       activeOpacity={0.7}
-        onPress={() => props.navigation.navigate('Detail', {item: props.item})}>
+        onPress={() => props.navigation.navigate('Detail', {item: props.item,quantity:quantity})}>
         <View
           style={{
             flex: 1,
@@ -103,10 +107,11 @@ const Products = (props) => {
           </View>
          
           <View style={{marginHorizontal: 10, marginTop: 8}}>
-            <View style={{justifyContent: 'center'}}>
-              <Text style={{fontSize: 22}}>{props.item.title}</Text>
+            <View style={{justifyContent: 'center',width:210}}>
+              <Text style={{fontSize: 16,overflow: 'hidden',textOverflow:'ellipsis'}}>{truncate(props.item.title)}</Text>
             </View>
-            <View>
+      <View style={{flexDirection: 'row'}}>
+        <View style={{}} >
               <Text style={null}>{'Saved ' + props.item.saved}</Text>
               <View
                 style={{
@@ -132,20 +137,26 @@ const Products = (props) => {
 
               <Text style={null}>{'Unit ' + props.item.kg || 0}</Text>
             </View>
+            <View style={{margin:20}}>
+              
+              {Cart.filter((item) => item.id === props.item.id).length <= 0 && (
+           <AddToCartButton onPress={() => addtocart(props.item.id)} />
+         )}
+
+         {Cart.filter((item) => item.id === props.item.id).length > 0 && (
+           <AddToCart
+             onPress={(id) => _onAdd(props.item.id)}
+             onSub={(id) => _onSub(props.item.id)}
+             quantity={quantity}
+           />
+         )}</View>
+            </View>
+           
+           
           </View>
          
 
-          {Cart.filter((item) => item.id === props.item.id).length <= 0 && (
-            <AddToCartButton onPress={() => addtocart(props.item.id)} />
-          )}
-
-          {Cart.filter((item) => item.id === props.item.id).length > 0 && (
-            <AddToCart
-              onPress={(id) => _onAdd(props.item.id)}
-              onSub={(id) => _onSub(props.item.id)}
-              quantity={quantity}
-            />
-          )}
+         
         </View>
        
       </TouchableOpacity>

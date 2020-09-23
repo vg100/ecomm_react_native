@@ -6,6 +6,7 @@ import PhoneOtp from "../Screens/PhoneOtp";
 import LoginScreen from "../Screens/LoginScreen";
 import LoadingScreen from "../Screens/LoadingScreen";
 import {View} from 'react-native'
+import  AppBottomTab  from "./tab";
 const Stack = createStackNavigator();
 
 export const AuthStack = () => {
@@ -19,7 +20,8 @@ export const AuthStack = () => {
 };
 
 export const AppStack = () => {
-  return <AppSideDrawer />;
+  // return <AppBottomTab />
+  return <AppSideDrawer />
 };
 
 

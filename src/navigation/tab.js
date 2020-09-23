@@ -66,7 +66,7 @@ const Tab = createMaterialBottomTabNavigator();
         ),
       }} name="Profile" component={MapScreen} />
       
-    {/*  <Tab.Screen name="Horizotal" component={HorizontalProductItem} /> */}
+   
      
     </Tab.Navigator>
     

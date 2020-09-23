@@ -3,6 +3,7 @@ import * as React from 'react';
 import firebase from 'firebase';
 import {firebaseConfig} from '../Fire';
 import {AppStack, AuthStack} from './routes';
+import SplashScreen from '../Screens/SplashScreen';
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -11,25 +12,22 @@ if (!firebase.apps.length) {
 export const Navigator = () => {
   const [loading, setLoading] = React.useState(true);
   const [user, setUser] = React.useState(true);
-  // React.useEffect(() => {
-  //   _checkIfLoggedIn();
-  // }, []);
+  React.useEffect(() => {
+    let timer=setTimeout(() => {
+      setLoading(false);
+    },3000)
+   return () => {
+     clearTimeout(timer)
+   }
+  }, []);
 
-  // function _checkIfLoggedIn() {
-  //   firebase.auth().onAuthStateChanged((user) => {
-  //     if (user) {
-  //       console.log('users', user);
-  //       setUser(true);
-  //     } else {
-  //       console.log('not sign in');
-  //       setUser(false);
-  //     }
-  //   });
-  // }
+  
 
   return (
     <NavigationContainer>
-      {user ? <AppStack /> : <AuthStack />}
+   {/* /   {user ? <AppStack /> : <AuthStack />} */}
+      {loading && <SplashScreen />}
+      {!loading && <AppStack />}
     </NavigationContainer>
   );
 };

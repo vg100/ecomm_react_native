@@ -37,8 +37,9 @@ export const products = [
     id: 1,
     mrp:65,
     kg:1,
+    img:["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlkr9gS6rjcjknS5hyIv0Zh_dtFT6Q3LDYHQ&usqp=CAU","https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlkr9gS6rjcjknS5hyIv0Zh_dtFT6Q3LDYHQ&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlkr9gS6rjcjknS5hyIv0Zh_dtFT6Q3LDYHQ&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlkr9gS6rjcjknS5hyIv0Zh_dtFT6Q3LDYHQ&usqp=CAU","https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlkr9gS6rjcjknS5hyIv0Zh_dtFT6Q3LDYHQ&usqp=CAU"],
     saved:155,
-    title: "product1",
+    title: "Dell Vostro core i3 10Th Gen -(8GB/1TB HDD/Windows 10 Home) vostro 3482 bThin and light laptop(14inch,black,1.66kg with MS Office)",
     category: "MEN",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlkr9gS6rjcjknS5hyIv0Zh_dtFT6Q3LDYHQ&usqp=CAU",
