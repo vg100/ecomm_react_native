@@ -24,6 +24,7 @@ export const CustomDrawerContent = (props) => {
             justifyContent: 'center',
           }}>
           <TouchableOpacity
+          onPress={() =>props.navigation.navigate('HomeScreen',{modal:true})}
             style={{
               elevation: 1.5,
               borderRadius: 4,

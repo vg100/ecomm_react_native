@@ -56,6 +56,7 @@ const LoginScreen = (props) => {
     try {
       const userInfo = await GoogleSignin.signInSilently();
       console.log('User Info --> ', userInfo);
+      props.getuser(userInfo)
       setuserInfo(userInfo);
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_REQUIRED) {
@@ -105,14 +106,14 @@ const LoginScreen = (props) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={{marginLeft:18,marginTop:-8,}}>
       <GoogleSigninButton
-        style={{width: 312, height: 48}}
+        style={{width: 290, height: 48}}
         size={GoogleSigninButton.Size.Wide}
         color={GoogleSigninButton.Color.Light}
         onPress={_signIn}
       />
-      {userInfo != null && (
+      {/* {userInfo != null && (
         <View style={styles.container}>
           <Image
             source={{uri: userInfo.user.photo}}
@@ -124,7 +125,7 @@ const LoginScreen = (props) => {
             <Text>Logout</Text>
           </TouchableOpacity>
         </View>
-      )}
+      )} */}
     </View>
   );
 };
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#DDDDDD',
     padding: 10,
     width: 300,
-    marginTop: 30,
+    marginTop: 10,
   },
 });
 
